@@ -1,0 +1,40 @@
+//LG5.1//
+version = 5.1
+infile 'C:\Users\jjd264\Documents\Sims-Lpa-Heteroskedastic\working.dat' quote = single
+
+model
+options
+   maxthreads=12;
+   algorithm 
+      tolerance=1e-008 emtolerance=0.01 emiterations=250 nriterations=50 ;
+   startvalues
+      seed=0 sets=16 tolerance=1e-005 iterations=50;
+   bayes
+      categorical=1 variances=1 latent=1 poisson=1;
+   montecarlo
+      seed=0 sets=0 replicates=500 tolerance=1e-008;
+   quadrature  nodes=10;
+   missing  excludeall;
+   output      
+      parameters=effect  betaopts=wl standarderrors profile probmeans=posterior
+      bivariateresiduals estimatedvalues=model;
+   outfile  'C:\Users\jjd264\Documents\Sims-Lpa-Heteroskedastic\NoninclusivePostProbs.dat'
+      classification      keep y;
+variables
+   dependent I1 continuous, I2 continuous, I3 continuous, I4 continuous,
+      I5 continuous;
+   latent
+      Cluster nominal 3;
+equations
+   Cluster <- 1;
+   I1 <- 1 + Cluster;
+   I2 <- 1 + Cluster;
+   I3 <- 1 + Cluster;
+   I4 <- 1 + Cluster;
+   I5 <- 1 + Cluster;
+   I1 | Cluster;
+   I2 | Cluster;
+   I3 | Cluster;
+   I4 | Cluster;
+   I5 | Cluster;
+end model
