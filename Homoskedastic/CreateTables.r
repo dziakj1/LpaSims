@@ -74,16 +74,27 @@ subset.answers <- final.answers[which(final.answers$which.effect.size==3 & final
 temp <- rbind(true.distal.mean.by.class,
               c(subset.answers$which.measurement.quality[1],subset.answers$which.class.size.distribution[1],subset.answers$which.effect.size[1]),
               c(subset.answers$BiasModalNone1[1],subset.answers$BiasModalNone2[1],subset.answers$BiasModalNone3[1]),
+              c(subset.answers$BiasProportionalNone1[1],subset.answers$BiasProportionalNone2[1],subset.answers$BiasProportionalNone3[1]),
               c(subset.answers$BiasModalML1[1],subset.answers$BiasModalML2[1],subset.answers$BiasModalML3[1]),
+              c(subset.answers$BiasProportionalML1[1],subset.answers$BiasProportionalML2[1],subset.answers$BiasProportionalML3[1]),
               c(subset.answers$BiasModalBCH1[1],subset.answers$BiasModalBCH2[1],subset.answers$BiasModalBCH3[1]),
+              c(subset.answers$BiasProportionalBCH1[1],subset.answers$BiasProportionalBCH2[1],subset.answers$BiasProportionalBCH3[1]),
               c(subset.answers$BiasModalInclusive1[1],subset.answers$BiasModalInclusive2[1],subset.answers$BiasModalInclusive3[1]),
+              c(subset.answers$BiasProportionalInclusive1[1],subset.answers$BiasProportionalInclusive2[1],subset.answers$BiasProportionalInclusive3[1]),
               c(subset.answers$BiasModalQuadratic1[1],subset.answers$BiasModalQuadratic2[1],subset.answers$BiasModalQuadratic3[1]),
+              c(subset.answers$BiasProportionalQuadratic1[1],subset.answers$BiasProportionalQuadratic2[1],subset.answers$BiasProportionalQuadratic3[1]),
               c(subset.answers$which.measurement.quality[2],subset.answers$which.class.size.distribution[2],subset.answers$which.effect.size[2]),
               c(subset.answers$BiasModalNone1[2],subset.answers$BiasModalNone2[2],subset.answers$BiasModalNone3[2]),
+              c(subset.answers$BiasProportionalNone1[2],subset.answers$BiasProportionalNone2[2],subset.answers$BiasProportionalNone3[2]),
               c(subset.answers$BiasModalML1[2],subset.answers$BiasModalML2[2],subset.answers$BiasModalML3[2]),
+              c(subset.answers$BiasProportionalML1[2],subset.answers$BiasProportionalML2[2],subset.answers$BiasProportionalML3[2]),
               c(subset.answers$BiasModalBCH1[2],subset.answers$BiasModalBCH2[2],subset.answers$BiasModalBCH3[2]),
+              c(subset.answers$BiasProportionalBCH1[2],subset.answers$BiasProportionalBCH2[2],subset.answers$BiasProportionalBCH3[2]),
               c(subset.answers$BiasModalInclusive1[2],subset.answers$BiasModalInclusive2[2],subset.answers$BiasModalInclusive3[2]),
-              c(subset.answers$BiasModalQuadratic1[2],subset.answers$BiasModalQuadratic2[2],subset.answers$BiasModalQuadratic3[2]) );
+              c(subset.answers$BiasProportionalInclusive1[2],subset.answers$BiasProportionalInclusive2[2],subset.answers$BiasProportionalInclusive3[2]),
+              c(subset.answers$BiasModalQuadratic1[2],subset.answers$BiasModalQuadratic2[2],subset.answers$BiasModalQuadratic3[2]),
+              c(subset.answers$BiasProportionalQuadratic1[2],subset.answers$BiasProportionalQuadratic2[2],subset.answers$BiasProportionalQuadratic3[2])
+);
 
 print(temp);
 
