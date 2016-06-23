@@ -40,23 +40,7 @@ final.answers$RootMSEModalInclusive <- sqrt(((final.answers$RootMSEModalInclusiv
 final.answers$RootMSEProportionalInclusive <- sqrt(((final.answers$RootMSEProportionalInclusive1)^2+(final.answers$RootMSEProportionalInclusive2)^2+(final.answers$RootMSEProportionalInclusive3)^2)/3);
 
 
-
-#########################################################
-# Bias table:
-temp <- rbind(final.answers$which.measurement.quality,
-            final.answers$which.class.size.distribution,
-            final.answers$which.effect.size,
-            round(final.answers$AbsBiasModalNone,3),
-            round(final.answers$AbsBiasProportionalNone,3),
-            round(final.answers$AbsBiasModalML,3),
-            round(final.answers$AbsBiasProportionalML,3),
-            round(final.answers$AbsBiasModalBCH,3),
-            round(final.answers$AbsBiasProportionalBCH,3),
-            round(final.answers$AbsBiasModalInclusive,3),
-            round(final.answers$AbsBiasProportionalInclusive,3),
-            round(final.answers$AbsBiasOracle,3));
-print(rbind(temp[,1:6],temp[,7:12]));
-
+ 
 ########################################################
 # Zoom-in bias table;
 
@@ -66,47 +50,24 @@ subset.answers <- final.answers[which(final.answers$which.effect.size==3 & final
 temp <- rbind(true.distal.prob.by.class,
               c(subset.answers$which.measurement.quality[1],subset.answers$which.class.size.distribution[1],subset.answers$which.effect.size[1]),
               c(subset.answers$BiasModalNone1[1],subset.answers$BiasModalNone2[1],subset.answers$BiasModalNone3[1]),
+              c(subset.answers$BiasProportionalNone1[1],subset.answers$BiasProportionalNone2[1],subset.answers$BiasProportionalNone3[1]),
               c(subset.answers$BiasModalML1[1],subset.answers$BiasModalML2[1],subset.answers$BiasModalML3[1]),
+              c(subset.answers$BiasProportionalML1[1],subset.answers$BiasProportionalML2[1],subset.answers$BiasProportionalML3[1]),
               c(subset.answers$BiasModalBCH1[1],subset.answers$BiasModalBCH2[1],subset.answers$BiasModalBCH3[1]),
+              c(subset.answers$BiasProportionalBCH1[1],subset.answers$BiasProportionalBCH2[1],subset.answers$BiasProportionalBCH3[1]),
               c(subset.answers$BiasModalInclusive1[1],subset.answers$BiasModalInclusive2[1],subset.answers$BiasModalInclusive3[1]),
+              c(subset.answers$BiasProportionalInclusive1[1],subset.answers$BiasProportionalInclusive2[1],subset.answers$BiasProportionalInclusive3[1]),
               c(subset.answers$which.measurement.quality[2],subset.answers$which.class.size.distribution[2],subset.answers$which.effect.size[2]),
               c(subset.answers$BiasModalNone1[2],subset.answers$BiasModalNone2[2],subset.answers$BiasModalNone3[2]),
+              c(subset.answers$BiasProportionalNone1[2],subset.answers$BiasProportionalNone2[2],subset.answers$BiasProportionalNone3[2]),
               c(subset.answers$BiasModalML1[2],subset.answers$BiasModalML2[2],subset.answers$BiasModalML3[2]),
+              c(subset.answers$BiasProportionalML1[2],subset.answers$BiasProportionalML2[2],subset.answers$BiasProportionalML3[2]),
               c(subset.answers$BiasModalBCH1[2],subset.answers$BiasModalBCH2[2],subset.answers$BiasModalBCH3[2]),
-              c(subset.answers$BiasModalInclusive1[2],subset.answers$BiasModalInclusive2[2],subset.answers$BiasModalInclusive3[2]) );
+              c(subset.answers$BiasProportionalBCH1[2],subset.answers$BiasProportionalBCH2[2],subset.answers$BiasProportionalBCH3[2]),
+              c(subset.answers$BiasModalInclusive1[2],subset.answers$BiasModalInclusive2[2],subset.answers$BiasModalInclusive3[2]), 
+              c(subset.answers$BiasProportionalInclusive1[2],subset.answers$BiasProportionalInclusive2[2],subset.answers$BiasProportionalInclusive3[2]) );
 
 print(temp);
 
 
-
-#########################################################
-# Root MSE table:
-temp <- rbind(final.answers$which.measurement.quality,
-            final.answers$which.class.size.distribution,
-            final.answers$which.effect.size,
-            round(final.answers$RootMSEModalNone,3),
-            round(final.answers$RootMSEProportionalNone,3),
-            round(final.answers$RootMSEModalML,3),
-            round(final.answers$RootMSEProportionalML,3),
-            round(final.answers$RootMSEModalBCH,3),
-            round(final.answers$RootMSEProportionalBCH,3),
-            round(final.answers$RootMSEModalInclusive,3),
-            round(final.answers$RootMSEProportionalInclusive,3),
-            round(final.answers$RootMSEOracle,3));
-print(rbind(temp[,1:6],temp[,7:12]));
-
-#########################################################
-# Coverage table:  
-temp <- rbind(final.answers$which.measurement.quality,
-              final.answers$which.class.size.distribution,
-              final.answers$which.effect.size,
-              round(final.answers$CoverageModalNone,3),
-              round(final.answers$CoverageProportionalNone,3),
-              round(final.answers$CoverageModalML,3),
-              round(final.answers$CoverageProportionalML,3),
-              round(final.answers$CoverageModalBCH,3),
-              round(final.answers$CoverageProportionalBCH,3),
-              round(final.answers$CoverageModalInclusive,3),
-              round(final.answers$CoverageProportionalInclusive,3),
-              round(final.answers$CoverageOracle,3));
-print(rbind(temp[,1:6],temp[,7:12]));
+ 
